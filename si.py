@@ -1,14 +1,15 @@
 import sys
 
-if len(sys.argv) == 4:
+# Expecting: python si.py principal rate
+if len(sys.argv) == 3:
     principal = float(sys.argv[1])
     rate = float(sys.argv[2])
-    time = float(sys.argv[3])
 else:
-    print("No command-line input given — using input() method:")
-    principal = float(input("Enter principal: "))
-    rate = float(input("Enter rate: "))
-    time = float(input("Enter time: "))
+    print("Please provide principal and rate as command-line arguments.")
+    sys.exit(1)
+
+si = (principal * rate) / 100
+print("Simple Interest:", si)
 
 # Validate values
 if principal <= 0:
